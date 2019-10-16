@@ -1,0 +1,2 @@
+#!/bin/bash
+youtube-dl "ytsearch:$1" --restrict-filenames -x
