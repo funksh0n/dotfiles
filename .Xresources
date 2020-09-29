@@ -1,0 +1,47 @@
+URxvt.font:                xft:Liberation Mono:pixelsize=16
+URxvt.boldFont:            xft:Liberation Mono:pixelsize=16:bold
+URxvt.italicFont:          xft:Liberation Mono:pixelsize=16:italic
+URxvt.boldItalicFont:      xft:Liberation Mono:pixelsize=16:bold:italic
+URxvt.letterSpace:         -1
+
+*background: #0f0f0f
+*foreground: #f0f0f0
+! black
+*color0: #000000
+*color8: #2f2f2f
+! red
+*color1: #ff0000
+*color9: #f22f2f
+! green
+*color2: #00ff00
+*color10: #2ff22f
+! yellow
+*color3: #ffff00
+*color11: #f2f22f
+! blue
+*color4: #2f2ff2
+*color12: #4f4ff4
+! magenta
+*color5: #ff00ff
+*color13: #f22ff2
+! cyan
+*color6: #00ffff
+*color14: #2ff2f2
+! white
+*color7: #ffffff
+*color15: #f2f2f2
+
+URxvt.transparent:   false
+URxvt.shading:       0
+URxvt.internalBorder:      0
+URxvt.externalBorder:      0
+URxvt.scrollBar:           false
+URxvt*fading:              30
+URxvt.perl-ext-common:     matcher,resize-font,keyboard-select
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger:  C-Up
+URxvt.url-launcher:        /usr/bin/chromium
+URxvt.keysym.M-Delete:     perl:matcher:list
+URxvt.keysym.M-Escape:     perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard: true
+URxvt.colorUL:             #afafff

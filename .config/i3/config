@@ -1,0 +1,117 @@
+set $mod Mod4
+font pango:Liberation Mono 10
+floating_modifier $mod 
+bindsym $mod+bracketright focus output right
+bindsym $mod+bracketleft focus output left
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec dmenu_run
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+y resize shrink width 10 px or 10 ppt
+bindsym $mod+u resize grow height 10 px or 10 ppt
+bindsym $mod+i resize shrink height 10 px or 10 ppt
+bindsym $mod+o resize grow width 10 px or 10 ppt
+bindsym $mod+Shift+v split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+space floating toggle
+#bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+#bindsym $mod+d focus child # focus the child container
+
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "0"
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+#assign [class="URxvt"] $workspace1
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+exec xset s off -dpms
+exec_always xrdb ~/.Xresources
+
+set	$main	#573A87
+set	$dark	#3B3075
+set	$light	#6F5698
+set	$err	#B62753
+set	$high	#D99932
+set	$black	#000000
+set	$white	#ffffff
+set	$cream	#EFD9BE
+
+# class                 border	backgr.	text	indic	child_border
+client.focused          $light	$main	$cream	$light	$light
+client.focused_inactive $dark	$black	$dark	$light	$dark
+client.unfocused	$dark	$black	$dark	$light	$dark
+client.urgent           $err	$err	$high	$light	$err
+client.placeholder      #00ff00	#00ff00	#00ff00	#00ff00	#00ff00
+
+client.background       #ffffff
+
+#hide_edge_borders both
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+	colors {
+		statusline $cream
+		#			border	background	text
+		focused_workspace	$light	$main		$cream
+		inactive_workspace	$dark	$black		$dark
+		urgent_workspace	$err	$err		$high
+	}
+}
+
