@@ -20,3 +20,5 @@ nnoremap <C-L> :nohl<CR><C-L>
 command G w|!g++ %; ./a.out
 autocmd BufNewFile *.cpp 0r ~/.config/vim/templates/cpp
 autocmd Filetype cpp setlocal tabstop=4
+autocmd Filetype cpp setlocal shiftwidth=4
+
