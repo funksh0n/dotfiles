@@ -1,5 +1,7 @@
 setxkbmap -option caps:escape &
 [[ -f ~/.Xresources ]] && xrdg -merge -I$HOME ~/.Xresources
+eval $(ssh-agent -s) &
+ssh-add ~/.ssh/id_rsa &
 DISPLAY=":0" picom -bCG &
 xset -dpms s off &
 unclutter &
