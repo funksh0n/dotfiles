@@ -24,9 +24,11 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 colorscheme wombat256grf
 packadd termdebug
+command P w|!python %
 command G w|!g++ %; ./a.out
 command Gg w|!g++ -g %
 command Cp %w !xclip -i -sel c
+command Unmincss %s/[{;}]/&\r/g|norm! =gg
 autocmd BufNewFile *.cpp 0r ~/.config/vim/templates/cpp
 autocmd Filetype cpp setlocal tabstop=4
 autocmd Filetype cpp setlocal shiftwidth=4
