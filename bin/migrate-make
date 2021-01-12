@@ -1,0 +1,4 @@
+#!/bin/sh
+cd /home/funksh0n/core || exit
+docker-compose run --rm web python manage.py makemigrations
+
